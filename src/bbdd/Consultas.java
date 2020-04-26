@@ -5,22 +5,25 @@
  */
 package bbdd;
 
-import static bbdd.Consultas.menu2;
-import java.util.Scanner;
+import static bbdd.Bbdd.lector;
+import java.sql.SQLException;
 
-public class Bbdd {
-    static Scanner lector = new Scanner(System.in);
-    public static void main(String[] args) {
-        
+/**
+ *
+ * @author Sergio
+ */
+public class Consultas {
+
+    public static void menu2() throws SQLException {
         boolean salir = false;
-        while (!salir){
+        while (!salir) {
             System.out.println("1.Consultar base de datos");
             System.out.println("2.Actualizar base de datos");
             System.out.println("3.Inserción en la base de datos");
             System.out.println("4.Salir");
-            switch (Integer.parseInt(lector.nextLine())){
+            switch (Integer.parseInt(lector.nextLine())) {
                 case 1:
-                    menu2();
+                    
                     break;
                 case 2:
                     break;
@@ -29,8 +32,10 @@ public class Bbdd {
                 case 4:
                     salir = true;
                     break;
+                default:
+                    System.out.println("Vuelva a introducir una opción valida.");
+                    break;
             }
         }
     }
-    
 }
